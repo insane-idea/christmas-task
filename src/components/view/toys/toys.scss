@@ -1,0 +1,430 @@
+$header-footer-bg: #192f2d;
+$test-color2: rgb(140, 0, 255);
+$main-color: beige;
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html,
+body {
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+  color: $test-color2;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.header__container,
+.content__container,
+.footer__container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.content {
+  min-width: 100%;
+  min-height: calc(100vh - 140px);
+  background: url('@assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.toys-page__container {
+  display: flex;
+  flex-direction: column;
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: white;
+
+    .filters-title {
+      text-transform: uppercase;
+    }
+
+    .value-filter,
+    .range-filter,
+    .sort-filter {
+      flex: 1;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: rgba(31, 112, 127, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .value-filter {
+      .shape-select,
+      .color-select,
+      .size-select {
+        padding-bottom: 5%;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: nowrap;
+      }
+
+      .shape-select {
+        .active-btn {
+          filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+        }
+
+        display: flex;
+        align-items: center;
+
+        .ball {
+          background: url('@assets/svg/ball.svg') transparent;
+        }
+
+        .bell {
+          background: url('@assets/svg/bell.svg') transparent;
+        }
+
+        .cone {
+          background: url('@assets/svg/cone.svg') transparent;
+        }
+
+        .snowflake {
+          background: url('@assets/svg/snowflake.svg') transparent;
+        }
+
+        .figurine {
+          background: url('@assets/svg/figurine.svg') transparent;
+        }
+
+        .ball,
+        .bell,
+        .cone,
+        .snowflake,
+        .figurine {
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          border: 0;
+          outline: none;
+          padding: 0 12px;
+          margin: 0 2px;
+          cursor: pointer;
+        }
+
+        button:nth-child(1) {
+          margin-left: 6px;
+        }
+
+        button:nth-child(5) {
+          margin-right: 0;
+        }
+      }
+
+      .color-select {
+        display: flex;
+        align-items: center;
+
+        button {
+          position: relative;
+        }
+
+        .active-btn::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -2px;
+          left: 7px;
+          width: 6px;
+          height: 16px;
+          border: solid black;
+          border-width: 0 4px 4px 0;
+          transform: rotate(45deg);
+        }
+
+        .white,
+        .yellow,
+        .red,
+        .blue,
+        .green {
+          width: 20px;
+          height: 20px;
+          border: 0;
+          outline: none;
+          padding: 0 12px;
+          margin: 0 4px;
+          cursor: pointer;
+        }
+
+        .white {
+          background-color: white;
+        }
+
+        .yellow {
+          background-color: yellow;
+        }
+
+        .red {
+          background-color: red;
+        }
+
+        .blue {
+          background-color: blue;
+        }
+
+        .green {
+          background-color: green;
+        }
+
+        button:nth-child(1) {
+          margin-left: 6px;
+        }
+
+        button:nth-child(5) {
+          margin-right: 0;
+        }
+      }
+
+      .size-select {
+        display: flex;
+        align-items: center;
+
+        .active-btn {
+          filter: invert(9%) sepia(63%) saturate(461%) hue-rotate(322deg) brightness(83%) contrast(88%);
+        }
+
+        .small {
+          width: 20px;
+          height: 20px;
+        }
+
+        .middle {
+          width: 22px;
+          height: 22px;
+        }
+
+        .large {
+          width: 24px;
+          height: 24px;
+        }
+
+        .large,
+        .middle,
+        .small {
+          background: url('@assets/svg/ball.svg') transparent;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          border: 0;
+          outline: none;
+          padding: 0 12px;
+          margin: 0 2px;
+          cursor: pointer;
+        }
+
+        button:nth-child(1) {
+          margin-left: 6px;
+        }
+
+        button:nth-child(5) {
+          margin-right: 0;
+        }
+      }
+
+      .favorite-select {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .favourite__check {
+          display: inline-block;
+        }
+      }
+    }
+
+    .range-filter {
+      .amount-filter {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        .amount__range {
+          width: 60%;
+        }
+
+        .amount__from,
+        .amount__to {
+          padding: 10px 30px;
+          background-color: rgba(31, 112, 127, 0.3);
+          backdrop-filter: blur(6px);
+          border-radius: 25px;
+          border: 1px solid #278d9f;
+        }
+      }
+
+      .year-filter {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+
+        .year__range {
+          width: 60%;
+        }
+
+        .year__from,
+        .year__to {
+          padding: 10px 20px;
+          background-color: rgba(31, 112, 127, 0.3);
+          backdrop-filter: blur(6px);
+          border-radius: 25px;
+          border: 1px solid #278d9f;
+        }
+      }
+    }
+
+    .sort-filter {
+      .sort-filter__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .sort-select {
+          width: 90%;
+          padding: 6px;
+          outline: 0;
+          border-radius: 25px;
+          margin-bottom: 18vh;
+          background-color: rgba(31, 112, 127, 0.3);
+          backdrop-filter: blur(6px);
+          border-radius: 20px;
+          border: 1px solid #278d9f;
+          color: white;
+
+          option {
+            color: inherit;
+            background-color: #183e42;
+          }
+        }
+
+        .sort-reset {
+          min-width: 40%;
+          max-width: 60%;
+          margin-bottom: 20px;
+          padding: 8px 0;
+          white-space: nowrap;
+          border-radius: 20px;
+          border: 1px solid #278d9f;
+          outline: 0;
+          background-color: rgba(31, 112, 127, 0.3);
+          backdrop-filter: blur(6px);
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    gap: 20px;
+
+    .card.active {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+
+    .card.favorite {
+      .card__container {
+        .card__interface {
+          .card__ribbon {
+            background: #cbb77a;
+          }
+
+          .card__ribbon::after {
+            border-left: 20px solid #cbb77a;
+          }
+        }
+      }
+    }
+
+    .card {
+      position: relative;
+      width: 296px;
+      padding-left: 10px;
+      border-radius: 10px;
+      border: 1px solid #278d9f;
+      background-color: rgba(31, 112, 127, 0.3);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      color: white;
+      transform: translate(0px, 10%);
+      opacity: 0;
+      transition: all 0.8s ease 0s;
+      overflow: hidden;
+
+      .card__title {
+        text-align: center;
+      }
+
+      .card__container {
+        display: flex;
+        justify-content: space-around;
+
+        .card__interface {
+          .card__img {
+            width: 90px;
+            height: auto;
+          }
+
+          .card__ribbon {
+            position: absolute;
+            top: 180px;
+            left: -10px;
+            width: 80px;
+            height: 40px;
+            background: #24c5db;
+
+            &::before {
+              content: '';
+              position: absolute;
+              height: 0;
+              width: 0;
+              border-bottom: 10px solid #14455b;
+              border-left: 10px solid transparent;
+              top: -10px;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              height: 0;
+              width: 0;
+              border-left: 20px solid #24c5db;
+              border-top: 20px solid transparent;
+              border-bottom: 20px solid transparent;
+              right: -20px;
+            }
+          }
+        }
+
+        .card__content {
+          margin-top: -10px;
+          pointer-events: none;
+          line-height: 1;
+          user-select: none;
+        }
+      }
+    }
+  }
+}
