@@ -188,7 +188,7 @@ html {
     width: 50%;
     height: calc(100vh - 180px);
     background: white;
-    background: url(http://localhost:8080/assets/1.jpg);
+    background: url('@assets/bg/1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -21,7 +21,7 @@ class TreePage extends Page {
       backgroundControls.forEach((button: HTMLElement) => {
         button.addEventListener('click', () => {
           const img = new Image();
-          img.src = `../../../assets/bg/${button.dataset.bg}.jpg`;
+          img.src = `./assets/bg/${button.dataset.bg}.jpg`;
           img.onload = () => {
             const treeBg = this.container.querySelector('.tree-page__tree') as HTMLElement;
             treeBg.style.backgroundImage = `url(${img.src})`;
@@ -38,7 +38,7 @@ class TreePage extends Page {
       treeControls.forEach((button: HTMLElement) => {
         button.addEventListener('click', () => {
           const img = new Image();
-          img.src = `../../../assets/tree/${button.dataset.tree}.png`;
+          img.src = `./assets/tree/${button.dataset.tree}.png`;
           img.onload = () => {
             const tree = this.container.querySelector('.tree') as HTMLElement;
             tree.style.backgroundImage = `url(${img.src})`;
@@ -80,9 +80,9 @@ class TreePage extends Page {
     const soundBtn = this.container.querySelector('.sound-btn') as HTMLElement;
 
     if (playing === 'enabled') {
-      soundBtn.style.backgroundImage = `url('../../../assets/svg/audio.svg')`;
+      soundBtn.style.backgroundImage = `url('./assets/svg/audio.svg')`;
     } else if (playing === 'disabled') {
-      soundBtn.style.backgroundImage = `url('../../../assets/svg/mute.svg')`;
+      soundBtn.style.backgroundImage = `url('./assets/svg/mute.svg')`;
     }
   }
 
@@ -172,7 +172,7 @@ class TreePage extends Page {
           const p = document.createElement('p');
 
           toy.classList.add('toy');
-          toy.style.backgroundImage = `url('../../../assets/toys/${initialData[+number - 1].num}.png')`;
+          toy.style.backgroundImage = `url('./assets/toys/${initialData[+number - 1].num}.png')`;
           p.classList.add('toy__count');
           p.innerHTML = initialData[+number - 1].count.toString();
           toy.append(p);
@@ -185,7 +185,7 @@ class TreePage extends Page {
           const p = document.createElement('p');
 
           toy.classList.add('toy');
-          toy.style.backgroundImage = `url('../../../assets/toys/${initialData[i].num}.png')`;
+          toy.style.backgroundImage = `url('./assets/toys/${initialData[i].num}.png')`;
           p.classList.add('toy__count');
           p.innerHTML = initialData[i].count.toString();
           toy.append(p);
